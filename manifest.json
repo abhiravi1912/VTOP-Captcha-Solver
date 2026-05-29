@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "VTOP CAPTCHA Solver",
+  "version": "3.0",
+  "description": "Auto-solves CAPTCHA on VTOP login using AI.",
+  "permissions": ["activeTab", "storage"],
+  "host_permissions": [
+    "https://vtop.vitap.ac.in/*",
+    "https://*.vitap.ac.in/*",
+    "https://api.groq.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://vtop.vitap.ac.in/*",
+        "https://*.vitap.ac.in/*"
+        
+      ],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "VTOP CAPTCHA Solver"
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  }
+}
